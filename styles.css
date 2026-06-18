@@ -1,0 +1,61 @@
+:root {
+    /* ---- Typography ---- */
+    --font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
+
+    --fs-name: 18px;
+    --fs-section-title: 14px;
+    --fs-body: 13.5px;
+    --fs-friend: 13px;
+    --fs-location: 13px;
+    --fs-label: 10px; /* uppercase micro-labels */
+    --fs-quote: 14px;
+    --fs-button: 13.5px;
+
+    /* ---- Spacing ---- */
+    --space-card-padding: 18px;
+    --space-stack-gap: 12px; /* gap between section cards */
+    --space-page-pad-y: 36px;
+    --space-page-pad-x: 20px;
+    --content-max-width: 500px;
+
+    /* ---- Text ---- */
+    --text-primary: #2b2622; /* names, headings */
+    --text-body: #5a524b; /* about copy */
+    --text-friend: #4a423c; /* friend names */
+    --text-secondary: #8a807a; /* location */
+    --text-muted: #a89c92; /* uppercase labels */
+    --text-button-secondary: #9a6b47;
+
+    /* ---- Main ---- */
+    --accent: #e07a3f; /* primary warm orange */
+    --accent-strong: #c2622b; /* hover / pressed */
+    --accent-soft: #faf3ee; /* tinted fills */
+
+    /* ---- Surfaces ---- */
+    --background: #f7eee6; /* warm page background */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    font-family: var(--font-family);
+}
+
+main {
+    padding: var(--space-page-pad-y) var(--space-page-pad-x);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-gap);
+}
