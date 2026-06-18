@@ -122,3 +122,20 @@ main {
     font-size: var(--fs-location);
     color: var(--text-secondary);
 }
+
+.about-section h3,
+.friends-section h3,
+.favorites-section h3 {
+    display: inline-block;
+    font-size: var(--fs-section-title);
+    font-weight: var(--fw-bold);
+    padding-bottom: 7px;
+    border-bottom: 2px solid var(--accent, #e07a3f);
+    margin-bottom: 12px;
+}
+
+.about-section p {
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    color: var(--text-body);
+}
