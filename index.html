@@ -126,8 +126,49 @@
                 <section class="buttons-section">
                     <button class="btn primary">Generate user</button>
                     <button class="btn secondary">Save user page</button>
+
+                    <div class="dropdown">
+                        <button
+                            type="button"
+                            class="btn secondary dropdown-toggle"
+                            aria-haspopup="listbox"
+                            aria-expanded="false"
+                        >
+                            <span>Load user page</span>
+                            <svg
+                                class="dropdown-caret"
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M6 9l6 6 6-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+
+                        <ul class="dropdown-menu" role="listbox">
+                            <li class="dropdown-item" role="option" tabindex="0">
+                                John Doe
+                            </li>
+                            <li class="dropdown-item" role="option" tabindex="0">
+                                Jane Smith
+                            </li>
+                            <li class="dropdown-item" role="option" tabindex="0">
+                                Alex Johnson
+                            </li>
+                            <li class="dropdown-item" role="option" tabindex="0">
+                                Maria Garcia
+                            </li>
+                        </ul>
+                    </div>
                 </section>
             </div>
         </main>
+        <script src="src/app.js"></script>
     </body>
 </html>

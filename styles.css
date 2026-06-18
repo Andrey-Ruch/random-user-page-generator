@@ -21,7 +21,7 @@
     --space-card-gap: 14px;
     --space-page-pad-y: 36px;
     --space-page-pad-x: 20px;
-    --content-max-width: 500px;
+    --content-max-width: 600px;
 
     /* ---- Text ---- */
     --text-primary: #2b2622; /* names, headings */
@@ -253,4 +253,71 @@ hr {
 
 .btn.secondary:hover {
     background-color: #fffcfa;
+}
+
+.dropdown {
+    position: relative;
+    flex: 1 1 0%; /* share the row equally with the two buttons */
+    display: flex;
+}
+
+.dropdown-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dropdown-caret {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.18s ease;
+}
+
+.dropdown.open .dropdown-caret {
+    transform: rotate(180deg);
+}
+
+/* panel opens ABOVE the trigger */
+.dropdown-menu {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-button);
+    box-shadow: var(--shadow-action-bar);
+    max-height: 240px;
+    overflow-y: auto;
+
+    /* hidden by default; animate in */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+.dropdown.open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: var(--fs-body);
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: var(--accent-soft);
+    outline: none;
 }
