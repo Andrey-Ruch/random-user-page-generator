@@ -7,13 +7,13 @@
     --fw-extrabold: 800;
 
     --fs-name: 18px;
-    --fs-section-title: 14px;
-    --fs-body: 13.5px;
-    --fs-friend: 13px;
-    --fs-location: 13px;
-    --fs-label: 13px; /* uppercase micro-labels */
+    --fs-section-title: 16px;
+    --fs-body: 14px;
+    --fs-friend: 14px;
+    --fs-location: 14px;
+    --fs-label: 14px; /* uppercase micro-labels */
     --fs-quote: 14px;
-    --fs-button: 13.5px;
+    --fs-button: 14px;
 
     /* ---- Spacing ---- */
     --space-card-padding: 18px;
@@ -33,7 +33,7 @@
 
     /* ---- Main ---- */
     --accent: #e07a3f; /* primary warm orange */
-    --accent-strong: #c2622b; /* hover / pressed */
+    --accent-strong: #da773d; /* hover / pressed */
     --accent-soft: #faf3ee; /* tinted fills */
 
     /* ---- Surfaces ---- */
@@ -194,6 +194,7 @@ main {
 .quote {
     margin: 3px 0px 0px;
     font-size: var(--fs-quote);
+    font-style: italic;
 }
 
 .quote-author {
@@ -215,4 +216,41 @@ hr {
     font-weight: var(--fw-medium);
     text-transform: capitalize;
     margin-top: 1px;
+}
+
+.buttons-section {
+    position: sticky;
+    bottom: 36px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    flex: 1 1 0%;
+    cursor: pointer;
+    border-style: none;
+    border-radius: var(--radius-button);
+    padding: 13px 8px;
+    font-family: inherit;
+    font-size: var(--fs-button);
+    font-weight: var(--fw-medium);
+}
+
+.btn.primary {
+    background-color: var(--accent, #e07a3f);
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: var(--accent-strong);
+}
+
+.btn.secondary {
+    background-color: white;
+    border: 1.5px solid var(--border-button);
+    color: var(--text-button-secondary);
+}
+
+.btn.secondary:hover {
+    background-color: #fffcfa;
 }
