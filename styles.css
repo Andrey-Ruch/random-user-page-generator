@@ -102,12 +102,13 @@ main {
     gap: var(--space-card-gap);
 }
 
-.image-container {
+.user-image-container {
     width: 64px;
     height: 64px;
 }
 
-.image-container img {
+.user-image-container img,
+.friends-item-image-container img {
     width: 100%;
     height: auto;
     border-radius: var(--radius-avatar);
@@ -130,7 +131,7 @@ main {
     font-size: var(--fs-section-title);
     font-weight: var(--fw-bold);
     padding-bottom: 7px;
-    border-bottom: 2px solid var(--accent, #e07a3f);
+    border-bottom: 2px solid var(--accent);
     margin-bottom: 12px;
 }
 
@@ -138,4 +139,26 @@ main {
     font-size: var(--fs-body);
     line-height: 1.6;
     color: var(--text-body);
+}
+
+.friends-items-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 11px 18px;
+}
+
+.friends-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.friends-item-image-container {
+    width: 34px;
+    height: 34px;
+}
+
+.friend-name {
+    font-size: var(--fs-friend);
+    color: var(--text-friend);
 }
