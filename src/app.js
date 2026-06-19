@@ -1,11 +1,12 @@
-import ApiService from "./models/ApiService.js";
+import UserPageModel from "./models/UserPageModel.js";
+import PageView from "./views/PageView.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
+    const view = new PageView();
+
     try {
-        const data = await ApiService.getJSON(
-            "https://randomuser.me/api/?results=1",
-        );
-        console.log("data:", data);
+        const page = await UserPageModel.generate();
+        view.render(page);
     } catch (err) {
         console.error(err);
     }
