@@ -7,11 +7,21 @@ export default class PageView {
         this.friendsContainer = document.querySelector(
             ".friends-items-container",
         );
+        this.quoteEl = document.querySelector(".quote");
+        this.quoteAuthorEl = document.querySelector(".quote-author");
+        this.pokemonPhotoEl = document.querySelector(
+            ".pokemon-image-container img",
+        );
+        this.pokemonNameEl = document.querySelector(".pokemon-name");
+        this.aboutEl = document.querySelector(".about-section p");
     }
 
     render(page) {
         this.#renderMainUser(page.mainUser);
         this.#renderFriends(page.friends);
+        this.#renderQuote(page.quote);
+        this.#renderPokemon(page.pokemon);
+        this.#renderAbout(page.aboutMe);
     }
 
     #renderMainUser(user) {
@@ -20,6 +30,22 @@ export default class PageView {
         this.userPhotoEl.alt = fullName;
         this.nameEl.textContent = fullName;
         this.addressEl.textContent = `${user.city}, ${user.state}`;
+    }
+
+    #renderQuote(quote) {
+        this.quoteEl.textContent = `“${quote}”`;
+        this.quoteAuthorEl.textContent = "- Kanye";
+    }
+
+    #renderPokemon(pokemon) {
+        this.pokemonPhotoEl.src = pokemon.sprite;
+        this.pokemonPhotoEl.alt = pokemon.name;
+        // Proper Case is applied via CSS (text-transform: capitalize).
+        this.pokemonNameEl.textContent = pokemon.name;
+    }
+
+    #renderAbout(aboutMe) {
+        this.aboutEl.textContent = aboutMe;
     }
 
     #renderFriends(friends) {

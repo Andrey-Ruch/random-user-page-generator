@@ -1,13 +1,9 @@
-import UserPageModel from "./models/UserPageModel.js";
+// Entry point. Wires the MVC pieces together once the DOM is ready.
 import PageView from "./views/PageView.js";
+import AppController from "./controllers/AppController.js";
 
-window.addEventListener("DOMContentLoaded", async () => {
+window.addEventListener("DOMContentLoaded", () => {
     const view = new PageView();
-
-    try {
-        const page = await UserPageModel.generate();
-        view.render(page);
-    } catch (err) {
-        console.error(err);
-    }
+    const controller = new AppController(view);
+    controller.init();
 });
