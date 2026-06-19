@@ -12,6 +12,30 @@ export default class PageView {
         this.pokemonPhotoEl = document.querySelector(".pokemon-photo");
         this.pokemonNameEl = document.querySelector(".pokemon-name");
         this.aboutEl = document.querySelector(".about-text");
+
+        this.container = document.querySelector(".container");
+        this.statusEl = this.#createStatusBanner();
+    }
+
+    /** Shows a error message at the top of the page. */
+    showError(message) {
+        this.statusEl.textContent = message;
+        this.statusEl.hidden = false;
+    }
+
+    /** Hides any visible error message. */
+    clearError() {
+        this.statusEl.textContent = "";
+        this.statusEl.hidden = true;
+    }
+
+    #createStatusBanner() {
+        const banner = document.createElement("div");
+        banner.className = "page-status";
+        banner.setAttribute("role", "alert");
+        banner.hidden = true;
+        this.container.prepend(banner);
+        return banner;
     }
 
     render(page) {

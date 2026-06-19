@@ -253,3 +253,22 @@ hr {
 .btn.secondary:hover {
     background-color: #fffcfa;
 }
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.page-status {
+    border: 1px solid #e7b9a3;
+    border-radius: var(--radius-card);
+    padding: 12px var(--space-card-padding);
+    background-color: var(--accent-soft);
+    color: #a23b16;
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+}
+
+.page-status[hidden] {
+    display: none;
+}
