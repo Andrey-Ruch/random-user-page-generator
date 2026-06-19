@@ -9,11 +9,9 @@ export default class PageView {
         );
         this.quoteEl = document.querySelector(".quote");
         this.quoteAuthorEl = document.querySelector(".quote-author");
-        this.pokemonPhotoEl = document.querySelector(
-            ".pokemon-image-container img",
-        );
+        this.pokemonPhotoEl = document.querySelector(".pokemon-photo");
         this.pokemonNameEl = document.querySelector(".pokemon-name");
-        this.aboutEl = document.querySelector(".about-section p");
+        this.aboutEl = document.querySelector(".about-text");
     }
 
     render(page) {
