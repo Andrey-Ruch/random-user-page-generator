@@ -233,7 +233,7 @@ hr {
 .saved-users-select {
     flex: 1 1 0;
     min-width: 0;
-    padding: 11px 12px;
+    padding: 13px 8px;
     font-family: inherit;
     font-size: var(--fs-button);
     color: var(--text-primary);
