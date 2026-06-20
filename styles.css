@@ -49,12 +49,9 @@
     --radius-card: 16px;
     --radius-avatar: 14px; /* profile photo (rounded square) */
     --radius-button: 12px;
-    --radius-action-bar: 18px;
 
     /* ---- Shadows ---- */
     --shadow-card: 1px 1px 4px rgba(43, 38, 34, 0.3);
-    --shadow-action-bar: 0 6px 22px rgba(43, 38, 34, 0.1);
-    --shadow-button: 0 6px 14px rgba(224, 122, 63, 0.28);
 
     /* ---- Accent rule (section-title underline) ---- */
     --rule-accent: 2px solid var(--accent);
