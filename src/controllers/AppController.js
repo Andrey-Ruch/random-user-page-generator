@@ -32,7 +32,7 @@ export default class AppController {
         } catch (err) {
             console.error(err);
             this.view.showError(
-                "Couldn't load a new user. Please check your connection and try again.",
+                "Something went wrong while generating a user. Please try again later.",
             );
         } finally {
             this.#setLoading(false);
