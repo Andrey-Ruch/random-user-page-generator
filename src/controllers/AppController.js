@@ -1,9 +1,11 @@
+// Coordinates user actions with the model and views.
 import UserPageModel from "../models/UserPageModel.js";
 import StorageModel from "../models/StorageModel.js";
 
 export default class AppController {
-    constructor(view) {
+    constructor(view, savedUsersView) {
         this.view = view;
+        this.savedUsersView = savedUsersView;
         this.currentPage = null;
         this.generateBtn = document.querySelector(".generate-btn");
         this.saveBtn = document.querySelector(".save-btn");
@@ -16,7 +18,7 @@ export default class AppController {
         this.saveBtn.addEventListener("click", () => this.saveUser());
         this.loadBtn.addEventListener("click", () => this.loadUser());
 
-        this.#refreshLoadButton();
+        this.#refreshSavedUsers();
         this.generateUser();
     }
 
@@ -40,21 +42,22 @@ export default class AppController {
     saveUser() {
         if (!this.currentPage) return;
 
-        StorageModel.saveUser(this.currentPage);
-
-        this.#refreshLoadButton();
+        const entry = StorageModel.saveUser(this.currentPage);
+        this.#refreshSavedUsers();
+        this.savedUsersView.selectId(entry.id);
         this.#flashSaved();
     }
 
     loadUser() {
-        const page = StorageModel.getSavedUser();
+        const id = this.savedUsersView.getSelectedId();
+        if (!id) return;
 
-        if (!page) return;
+        const entry = StorageModel.getById(id);
+        if (!entry) return;
 
-        this.currentPage = page;
-
+        this.currentPage = entry.page;
         this.view.clearError();
-        this.view.render(page);
+        this.view.render(entry.page);
     }
 
     #setLoading(isLoading) {
@@ -64,9 +67,11 @@ export default class AppController {
             : "Generate user";
     }
 
-    /** Enables the Load button only when a saved user exists. */
-    #refreshLoadButton() {
-        this.loadBtn.disabled = !StorageModel.hasSavedUser();
+    /** Repopulates the dropdown and toggles the Load button. */
+    #refreshSavedUsers() {
+        const savedUsers = StorageModel.getAll();
+        this.savedUsersView.renderOptions(savedUsers);
+        this.loadBtn.disabled = savedUsers.length === 0;
     }
 
     /** Confirms a successful save on the Save button. */
