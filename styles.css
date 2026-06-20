@@ -231,7 +231,8 @@ hr {
 }
 
 .saved-users-select {
-    width: 100%;
+    flex: 1 1 0;
+    min-width: 0;
     padding: 11px 12px;
     font-family: inherit;
     font-size: var(--fs-button);
